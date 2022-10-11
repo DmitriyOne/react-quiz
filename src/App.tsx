@@ -1,18 +1,8 @@
 import { FunctionComponent } from "react";
+import { Home } from "./screens";
 
-import { Game, Result } from "./components";
-
-import styles from './app.module.scss';
-
-const App: FunctionComponent = () => {
-  return (<>
-    <div className={styles.container}>
-      <Game />
-      {/* <Result />  */}
-    </div>
-  </>)
-}
+const App: FunctionComponent = () => (
+  <Home />
+);
 
 export default App;
-
-

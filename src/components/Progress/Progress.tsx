@@ -1,12 +1,25 @@
-import { FunctionComponent } from "react"
+import { FunctionComponent } from "react";
 
-import styles from './progress.module.scss'
+import { questions } from "../../data";
 
-export const Progress: FunctionComponent = () => {
+import styles from './progress.module.scss';
+
+type TProps = {
+  step: number;
+}
+
+export const Progress: FunctionComponent<TProps> = ({
+  step,
+}) => {
+  const percentage = step / questions.length * 100;
+
   return (
     <div className={styles.component}>
-      <div style={{ width: '30%' }} className={styles.row} />
+      <div
+        style={{ width: `${percentage}%` }}
+        className={styles.row}
+      />
     </div>
-  )
-}
+  );
+};
 
