@@ -1,15 +1,14 @@
 .component {
   height: 10px;
+  margin-bottom: 25px;
   border-radius: 30px;
   background-color: rgb(232, 232, 232);
-  margin-bottom: 25px;
 }
 
 .row {
+  width: 80%;
   height: 100%;
   border-radius: 30px;
-  width: 80%;
-  background: rgb(18, 231, 48);
-  transition: all 0.3s ease-in-out;
   background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%);
+  transition: all 0.3s ease-in-out;
 }

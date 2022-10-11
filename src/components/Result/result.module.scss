@@ -1,24 +1,20 @@
+@use '../../styles/mixins.scss';
+
 .component {
   text-align: center;
 }
 
 .button {
-  font-weight: bold;
-  font-family: 'Nunito', sans-serif;
-  border-radius: 30px;
-  border: 0;
-  padding: 15px 30px;
   font-size: 20px;
-  background-color: darken(#ff006e, 3%);
+  font-weight: bold;
   color: #fff;
+  padding: 15px 30px;
+  border-radius: 30px;
+  background-color: #ff006e;
   margin-top: 20px;
   cursor: pointer;
 }
 
-.title {
-  margin-bottom: 0;
-}
-
 .img {
-  width: 150px;
+  @include mixins.fluidMaxSize(150);
 }

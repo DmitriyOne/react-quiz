@@ -1,0 +1,24 @@
+@import "breakpoints";
+
+@mixin media-w($width) {
+  @media only screen and (max-width: ($width + "px")) {
+    @content;
+  }
+}
+
+@mixin media-h($height) {
+  @media only screen and (max-height: ($height + "px")) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fluidMaxSize($size, $property: width) {
+  #{$property}: 100%;
+  max-#{$property}: $size + px;
+}

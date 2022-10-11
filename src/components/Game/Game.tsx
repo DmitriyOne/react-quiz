@@ -1,27 +1,38 @@
 import { FunctionComponent } from "react";
 
+import { IQuestion } from "../../interfaces";
 import { Progress } from "../Progress";
 
 import styles from './game.module.scss';
 
-export const Game: FunctionComponent = () => {
+type TProps = {
+  step: number;
+  questions: IQuestion;
+  onClickVariant: (index: number) => void;
+}
+
+export const Game: FunctionComponent<TProps> = ({
+  step,
+  questions,
+  onClickVariant,
+}) => {
   return (
     <>
-      <Progress />
+      <Progress step={step}/>
       <h1 className={styles.title}>
-        Что такое useState?
+        {questions.title}
       </h1>
-      <ul className={styles.container}>
-        <li className={styles.item}>
-          Это функция для хранения данных компонента
-        </li>
-        <li className={styles.item}>
-          Это глобальный стейт
-        </li>
-        <li className={styles.item}>
-          Это когда на ты никому не нужен
-        </li>
+      <ul>
+        {questions.variants.map((item, index) => (
+          <li
+            key={index}
+            className={styles.item}
+            onClick={() => onClickVariant(index)}
+          >
+            {index + 1}. {item}
+          </li>
+        ))}
       </ul>
     </>
-  )
-}
+  );
+};
